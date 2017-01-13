@@ -14,8 +14,8 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.zqxx.system.po.SysRole;
-import com.zqxx.system.po.SysUser;
+import com.zqxx.system.entity.SysRole;
+import com.zqxx.system.entity.SysUser;
 import com.zqxx.system.service.UserService;
 import javax.inject.Inject; 
 @Service  

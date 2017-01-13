@@ -3,13 +3,23 @@ package com.zqxx.common.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zqxx.common.utils.IdGen;
-import com.zqxx.system.po.SysUser;
+import com.zqxx.system.entity.SysUser;
 
-
+@MappedSuperclass
 public class BaseEntity implements Serializable{
 	/**
 	 * 
@@ -18,9 +28,18 @@ public class BaseEntity implements Serializable{
 	@Id
 	protected String id;//主键
 	protected String remarks;	// 备注
+	@JsonIgnore
+	@ManyToOne(fetch=FetchType.LAZY)
+	@NotFound(action = NotFoundAction.IGNORE)
 	protected SysUser createBy;	// 创建者
+	@Temporal(TemporalType.TIMESTAMP)
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	protected Date createDate;// 创建日期
+	@JsonIgnore
+	@ManyToOne(fetch=FetchType.LAZY)
+	@NotFound(action = NotFoundAction.IGNORE)
 	protected SysUser updateBy;	// 更新者
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	protected Date updateDate;// 更新日期
 	protected String delFlag; // 删除标记（0：正常；1：删除；2：审核）
 	@PrePersist

@@ -1,4 +1,4 @@
-package com.zqxx.system.po;
+package com.zqxx.system.entity;
 
 import java.util.HashSet;
 import java.util.List;
@@ -36,7 +36,9 @@ public class SysUser extends BaseEntity{
 	private String mobile;	// 手机
 	private String userType;// 用户类型
 	private String photo;	// 头像
-	 
+	
+	@ManyToMany  
+    @JoinTable(name="t_user_role",joinColumns={@JoinColumn(name="user_id")},inverseJoinColumns={@JoinColumn(name="role_id")})  
     private List<SysRole> roleList;//一个用户具有多个角色  
       
       
@@ -58,9 +60,7 @@ public class SysUser extends BaseEntity{
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
-	@ManyToMany  
-    @JoinTable(name="t_user_role",joinColumns={@JoinColumn(name="user_id")},inverseJoinColumns={@JoinColumn(name="role_id")})  
-    public List<SysRole> getRoleList() {  
+	 public List<SysRole> getRoleList() {  
         return roleList;  
     }  
     public void setRoleList(List<SysRole> roleList) {  

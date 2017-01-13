@@ -5,7 +5,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zqxx.shiro.annotation.CurrentUser;
-import com.zqxx.system.po.SysUser;
+import com.zqxx.system.entity.SysUser;
 
 @Controller
 public class UserCtrl {

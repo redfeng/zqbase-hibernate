@@ -10,7 +10,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.multipart.support.MissingServletRequestPartException;
 
 import com.zqxx.shiro.annotation.CurrentUser;
-import com.zqxx.system.po.SysUser;
+import com.zqxx.system.entity.SysUser;
 
 @Component
 public class CurrentUserMethodArgumentResolver implements HandlerMethodArgumentResolver {

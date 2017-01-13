@@ -1,7 +1,9 @@
 CREATE TABLE sys_user (
-	id INTEGER NOT NULL AUTO_INCREMENT,
+	id varchar(64) NOT NULL COMMENT '编号',
 	username varchar(100) NOT NULL,
 	password varchar(100) NOT NULL,
+	salt varchar(100),
+	office_id varchar(64) NOT NULL COMMENT '归属部门',
 	no varchar(100) COMMENT '工号',
 	name varchar(100) NOT NULL COMMENT '姓名',
 	email varchar(200) COMMENT '邮箱',

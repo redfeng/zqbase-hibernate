@@ -1,4 +1,4 @@
-package com.zqxx.system.po;
+package com.zqxx.system.entity;
 
 import java.util.ArrayList;
 import java.util.List;

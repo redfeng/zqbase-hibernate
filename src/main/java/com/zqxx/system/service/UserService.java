@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zqxx.system.dao.UserDao;
-import com.zqxx.system.po.SysUser;
+import com.zqxx.system.entity.SysUser;
 
 @Service
 public class UserService {

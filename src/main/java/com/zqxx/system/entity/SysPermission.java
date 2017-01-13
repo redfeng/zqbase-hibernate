@@ -1,4 +1,4 @@
-package com.zqxx.system.po;
+package com.zqxx.system.entity;
 
 import javax.persistence.Entity;  
 import javax.persistence.GeneratedValue;  

@@ -3,7 +3,7 @@ package com.zqxx.system.dao;
 import org.springframework.stereotype.Repository;
 
 import com.zqxx.dao.BaseDao;
-import com.zqxx.system.po.SysUser;
+import com.zqxx.system.entity.SysUser;
 
 @Repository
 public class UserDao extends BaseDao<SysUser>{
